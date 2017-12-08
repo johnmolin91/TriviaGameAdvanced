@@ -24,9 +24,10 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are correct. Memento is the answer.");
-    		correctCounter++;
+    		correctIncorrect1();
+    		console.log(correctCounter);
     		current = q2;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerOne").on("click", function() {
     		$("#answerOne").empty();
@@ -34,8 +35,10 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Memento is the answer.");
+    		correctIncorrect1();
+    		console.log(correctCounter);
     		current = q2;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerThree").on("click", function() {
     		$("#answerOne").empty();
@@ -43,8 +46,10 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Memento is the answer.");
+    		correctIncorrect1();
+    		console.log(correctCounter);
     		current = q2;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerFour").on("click", function() {
     		$("#answerOne").empty();
@@ -52,29 +57,26 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Memento is the answer.");
+    		correctIncorrect1();
+    		console.log(correctCounter);
     		current = q2;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
-    }	
 
-	function repopulate() {
-		$(".question").empty();
-		$(".result").empty();
-		if (current == q2) {
-		$(".question").html(current);
-		$("#answerOne").text("Lost Highway");
-		$("#answerTwo").text("Mulholland Drive");
-		$("#answerThree").text("Eraserhead");
-		$("#answerFour").text("Inland Empire");
-		$("#answerOne").on("click", function() {
+    	// $(".answers").on("click", setTimeout({ repopulate }, 2000));
+    }
+
+    if (current == q2) {
+    	$("#answerOne").on("click", function() {
     		$("#answerOne").empty();
     		$("#answerTwo").empty();
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are correct. Lost Highway is the answer.");
-    		correctCounter++;
+    		correctIncorrect2();
+    		console.log(correctCounter);
     		current = q3;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerTwo").on("click", function() {
     		$("#answerOne").empty();
@@ -82,8 +84,10 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Lost Highway is the answer.");
+    		correctIncorrect2();
+    		console.log(correctCounter);
     		current = q3;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerThree").on("click", function() {
     		$("#answerOne").empty();
@@ -91,8 +95,10 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Lost Highway is the answer.");
+    		correctIncorrect2();
+    		console.log(correctCounter);
     		current = q3;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerFour").on("click", function() {
     		$("#answerOne").empty();
@@ -100,23 +106,23 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Lost Highway is the answer.");
+    		correctIncorrect2();
+    		console.log(correctCounter);
     		current = q3;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
-		} else if (current == q3) {
-		$(".question").html(current);
-		$("#answerOne").text("Buenos Aires");
-		$("#answerTwo").text("Bogota");
-		$("#answerThree").text("Rio de Janeiro");
-		$("#answerFour").text("Santiago");
-		$("#answerOne").on("click", function() {
+    }
+    if (current == q3) {
+    $("#answerOne").on("click", function() {
     		$("#answerOne").empty();
     		$("#answerTwo").empty();
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Rio de Janeiro is the answer.");
+    		correctIncorrect3();
+    		console.log(correctCounter);
     		current = q4;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerTwo").on("click", function() {
     		$("#answerOne").empty();
@@ -124,8 +130,10 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Rio de Janeiro is the answer.");
+    		correctIncorrect3();
+    		console.log(correctCounter);
     		current = q4;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerThree").on("click", function() {
     		$("#answerOne").empty();
@@ -133,9 +141,10 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are correct. Rio de Janeiro is the answer.");
-    		correctCounter++;
+    		correctIncorrect3();
+    		console.log(correctCounter);
     		current = q4;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerFour").on("click", function() {
     		$("#answerOne").empty();
@@ -143,23 +152,23 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Rio de Janeiro is the answer.");
+    		correctIncorrect3();
+    		console.log(correctCounter);
     		current = q4;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
-		} else if (current == q4) {
-		$(".question").html(current);
-		$("#answerOne").text("Green Pill");
-		$("#answerTwo").text("Blue Pill");
-		$("#answerThree").text("Red Pill");
-		$("#answerFour").text("Orange Pill");
-		$("#answerOne").on("click", function() {
+    }
+
+    if (current == q4) {
+    	$("#answerOne").on("click", function() {
     		$("#answerOne").empty();
     		$("#answerTwo").empty();
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Red Pill is the answer.");
+    		console.log(correctCounter);
     		current = q5;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerTwo").on("click", function() {
     		$("#answerOne").empty();
@@ -167,8 +176,9 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Red Pill is the answer.");
+    		console.log(correctCounter);
     		current = q5;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerThree").on("click", function() {
     		$("#answerOne").empty();
@@ -176,9 +186,9 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are correct. Red Pill is the answer.");
-    		correctCounter++;
+    		console.log(correctCounter);
     		current = q5;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerFour").on("click", function() {
     		$("#answerOne").empty();
@@ -186,23 +196,21 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Red Pill is the answer.");
+    		console.log(correctCounter);
     		current = q5;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
-		} else if (current == q5) {
-		$(".question").html(current);
-		$("#answerOne").text("George Clooney");
-		$("#answerTwo").text("Brad Pitt");
-		$("#answerThree").text("Keanu Reeves");
-		$("#answerFour").text("Tom Cruise");
-		$("#answerOne").on("click", function() {
+    }
+    if (current == q5) {
+    	$("#answerOne").on("click", function() {
     		$("#answerOne").empty();
     		$("#answerTwo").empty();
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Tom Cruise is the answer.");
+    		console.log(correctCounter);
     		current = q6;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerTwo").on("click", function() {
     		$("#answerOne").empty();
@@ -210,8 +218,9 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Tom Cruise is the answer.");
+    		console.log(correctCounter);
     		current = q6;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerThree").on("click", function() {
     		$("#answerOne").empty();
@@ -219,8 +228,9 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Tom Cruise is the answer.");
+    		console.log(correctCounter);
     		current = q6;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerFour").on("click", function() {
     		$("#answerOne").empty();
@@ -228,25 +238,22 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are correct. Tom Cruise is the answer.");
-    		correctCounter++;
+    		console.log(correctCounter);
     		current = q6;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
-		} else if (current == q6) {
-		$(".question").html(current);
-		$("#answerOne").text("Christopher Nolan");
-		$("#answerTwo").text("Steven Spielberg");
-		$("#answerThree").text("Martin Scorsese");
-		$("#answerFour").text("Quentin Tarantino");
-		$("#answerOne").on("click", function() {
+    }
+
+    if (current == q6) {
+    	$("#answerOne").on("click", function() {
     		$("#answerOne").empty();
     		$("#answerTwo").empty();
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are correct. Christopher Nolan is the answer.");
-    		correctCounter++;
+    		console.log(correctCounter);
     		current = q6;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerTwo").on("click", function() {
     		$("#answerOne").empty();
@@ -254,8 +261,9 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Christopher Nolan is the answer.");
+    		console.log(correctCounter);
     		current = q6;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerThree").on("click", function() {
     		$("#answerOne").empty();
@@ -263,8 +271,9 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Christopher Nolan is the answer.");
+    		console.log(correctCounter);
     		current = q6;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
     	$("#answerFour").on("click", function() {
     		$("#answerOne").empty();
@@ -272,19 +281,103 @@ $( document ).ready(function() {
     		$("#answerThree").empty();
     		$("#answerFour").empty();
     		$(".result").html("You are incorrect. Christopher Nolan is the answer.");
+    		console.log(correctCounter);
     		current = q6;
-    		setTimeout(repopulate, 2000);
+    		repopulate();
     	})
+    	// $(".answers").on("click", setTimeout({ endGame }, 3000));
+    }
+        
+	function repopulate() {
+		$(".question").empty();
+		$(".result").empty();
+		if (current == q1) {
+		$(".question").html(current);
+		$("#answerOne").text("Lost Highway");
+		$("#answerTwo").text("Mulholland Drive");
+		$("#answerThree").text("Eraserhead");
+		$("#answerFour").text("Inland Empire");
+    	// $(".answers").on("click", setTimeout({ repopulate }, 2000));
+		} else if (current == q2) {
+		$(".question").html(current);
+		$("#answerOne").text("Buenos Aires");
+		$("#answerTwo").text("Bogota");
+		$("#answerThree").text("Rio de Janeiro");
+		$("#answerFour").text("Santiago");
+		
+    	// $(".answers").on("click", setTimeout({ repopulate }, 2000));
+		} else if (current == q3) {
+		$(".question").html(current);
+		$("#answerOne").text("Green Pill");
+		$("#answerTwo").text("Blue Pill");
+		$("#answerThree").text("Red Pill");
+		$("#answerFour").text("Orange Pill");
+		
+    	// $(".answers").on("click", setTimeout({ repopulate }, 2000));
+		} else if (current == q4) {
+		$(".question").html(current);
+		$("#answerOne").text("George Clooney");
+		$("#answerTwo").text("Brad Pitt");
+		$("#answerThree").text("Keanu Reeves");
+		$("#answerFour").text("Tom Cruise");
+		
+    	// $(".answers").on("click", setTimeout({ repopulate }, 2000));
+		} else if (current == q5) {
+		$(".question").html(current);
+		$("#answerOne").text("Christopher Nolan");
+		$("#answerTwo").text("Steven Spielberg");
+		$("#answerThree").text("Martin Scorsese");
+		$("#answerFour").text("Quentin Tarantino");
 		}
 	}
 
-	// function answersDiv() {
-	// 	$(".answers").empty();
-	// 	var div = $("<div></div>");
-	// 	$("#answerOne").append(div);
-	// 	$("#answerTwo").append(div);
-	// 	$("#answerThree").append(div);
-	// 	$("#answerFour").append(div);
-	// }
+	function endGame() {
+		$(".question").empty();
+		$(".answers").empty();
+		$(".result").html(correctCounter + " correct");
+	}
+	
+	function correctIncorrect1() {
+		if (current == q1) {
+			$("#answerTwo").on("click", function() {
+				correctCounter++;
+			})
+		}
+	}
+	function correctIncorrect2() {
+		if (current == q2) {
+			$("#answerOne").on("click", function() {
+				correctCounter++;
+			})
+		}
+	}
+	function correctIncorrect3() {
+		if (current == q3) {
+			$("#answerThree").on("click", function() {
+				correctCounter++;
+			})
+		}
+	}
+	function correctIncorrect4() {
+		if (current == q4) {
+			$("#answerThree").on("click", function() {
+				correctCounter++;
+			})
+		}
+	}
+	function correctIncorrect5() {
+		if (current == q5) {
+			$("#answerFour").on("click", function() {
+				correctCounter++;
+			})
+		}
+	}
+	function correctIncorrect6() {
+		if (current == q6) {
+			$("#answerOne").on("click", function() {
+				correctCounter++;
+			})
+		}
+	}
 
 });
