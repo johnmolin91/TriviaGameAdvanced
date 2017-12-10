@@ -9,6 +9,33 @@ $( document ).ready(function() {
     var q6 = "6. Who directed the movies 'Interstellar', 'Inception', and 'The Prestige?'"
 
     var correctCounter = 0;
+    var timer = 20;
+    var intervalId;
+
+    function decrement() {
+        timer--;
+        $("#timeLeft").text(timer + " seconds");
+        if (timer === 0 ) {
+            stop();
+            $(".question").empty();
+            $(".answers").empty();
+            $(".result").text("Times up!");
+        }
+    }
+
+    function run() {
+        intervalId = setInterval(decrement, 1000);
+    }
+
+    function stop() {
+        clearInterval(intervalId);
+    }
+
+    function reset() {
+        timer = 20;
+    }
+
+    run();
 
     current = q1;
     $(".question").html(current);
@@ -28,6 +55,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q2;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerOne").on("click", function() {
             $("#answerOne").empty();
@@ -38,6 +66,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q2;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerThree").on("click", function() {
             $("#answerOne").empty();
@@ -48,6 +77,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q2;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerFour").on("click", function() {
             $("#answerOne").empty();
@@ -58,6 +88,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q2;
             setTimeout(repopulate, 2000);
+            reset();
         })
     }   
 
@@ -84,6 +115,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q3;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerTwo").on("click", function() {
             $("#answerOne").empty();
@@ -94,6 +126,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q3;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerThree").on("click", function() {
             $("#answerOne").empty();
@@ -104,6 +137,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q3;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerFour").on("click", function() {
             $("#answerOne").empty();
@@ -114,6 +148,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q3;
             setTimeout(repopulate, 2000);
+            reset();
         })
         } else if (current == q3) {
         $(".question").html(current);
@@ -130,6 +165,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q4;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerTwo").on("click", function() {
             $("#answerOne").empty();
@@ -140,6 +176,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q4;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerThree").on("click", function() {
             $("#answerOne").empty();
@@ -151,6 +188,7 @@ $( document ).ready(function() {
             // correctCounter++;
             current = q4;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerFour").on("click", function() {
             $("#answerOne").empty();
@@ -161,6 +199,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q4;
             setTimeout(repopulate, 2000);
+            reset();
         })
         } else if (current == q4) {
         $(".question").html(current);
@@ -177,6 +216,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q5;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerTwo").on("click", function() {
             $("#answerOne").empty();
@@ -187,6 +227,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q5;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerThree").on("click", function() {
             $("#answerOne").empty();
@@ -198,6 +239,7 @@ $( document ).ready(function() {
             // correctCounter++;
             current = q5;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerFour").on("click", function() {
             $("#answerOne").empty();
@@ -208,6 +250,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q5;
             setTimeout(repopulate, 2000);
+            reset();
         })
         } else if (current == q5) {
         $(".question").html(current);
@@ -224,6 +267,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q6;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerTwo").on("click", function() {
             $("#answerOne").empty();
@@ -234,6 +278,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q6;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerThree").on("click", function() {
             $("#answerOne").empty();
@@ -244,6 +289,7 @@ $( document ).ready(function() {
             console.log(correctCounter);
             current = q6;
             setTimeout(repopulate, 2000);
+            reset();
         })
         $("#answerFour").on("click", function() {
             $("#answerOne").empty();
@@ -255,6 +301,7 @@ $( document ).ready(function() {
             // correctCounter++;
             current = q6;
             setTimeout(repopulate, 2000);
+            reset();
         })
         } else if (current == q6) {
         $(".question").html(current);
@@ -309,6 +356,7 @@ $( document ).ready(function() {
          $(".question").empty();
          $(".answers").empty();
          $(".result").html(correctCounter + " correct");
+         stop();
     }
 
     $('.right').click(function() {
